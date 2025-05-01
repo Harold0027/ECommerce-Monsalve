@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+
+}
+.nav{
+  background-color: black;
+  color: rgb(255, 255, 255);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.a-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
+}
+.clase-a{
+  color: beige;
+  font-style: italic;
+  text-decoration: none;
+}
