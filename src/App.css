@@ -19,7 +19,11 @@
   width: 40%;
 }
 .clase-a{
+  font-size: 1.5rem;
   color: beige;
   font-style: italic;
   text-decoration: none;
+}
+.CartWidget{
+  font-size: 2rem;
 }

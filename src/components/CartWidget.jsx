@@ -1,7 +1,7 @@
 const CartWidget = () =>{
     return(
         <div>
-            <span>🛒</span>
+            <span className="CartWidget">🛒</span>
         </div>
     )
 }

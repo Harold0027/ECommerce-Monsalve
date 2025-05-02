@@ -2,7 +2,9 @@ import CartWidget from "./CartWidget"
 const Navbar = ()=>{
     return(
         <nav className="nav">
-            <h2>Ecommerce</h2>
+            <div>
+                <img src="../logo-PetShop.png" alt="" style= {{width: "7rem"}}/>
+            </div>
             <div className="a-container">
                 <a href="" className="clase-a" >Nuevos</a>
                 <a href="" className="clase-a" >Ofertas</a>
