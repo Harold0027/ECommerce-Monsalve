@@ -1,16 +1,17 @@
 import CartWidget from "./CartWidget"
+import { Link } from "react-router-dom"
 const Navbar = ()=>{
     return(
         <nav className="nav">
-            <div>
+            <Link to="/">
                 <img src="../logo-PetShop.png" alt="" style= {{width: "7rem"}}/>
-            </div>
+            </Link>
             <div className="a-container">
-                <a href="" className="clase-a" >Nuevos</a>
-                <a href="" className="clase-a" >Ofertas</a>
-                <a href="" className="clase-a" >Populares</a>
+                <Link to="/petShop/nuevos" className="clase-a">Nuevos</Link>
+                <Link to="/petShop/ofertas" className="clase-a">Ofertas</Link>
+                <Link to="/petShop/populares" className="clase-a">Populares</Link>
             </div>
-            <CartWidget/>
+            <Link to="/petshop/cart"><CartWidget/></Link> 
         </nav>
     )
 }
