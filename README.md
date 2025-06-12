@@ -40,3 +40,9 @@ React Router: Navegación entre páginas.
 2. Crea una rama
 3. Realiza tus cambios y haz commit
 4. Sube tu rama
+5. Abre un Pull Request
+
+
+# Licencia
+
+Este proyecto está bajo la licencia MIT. Puedes usarlo, modificarlo y distribuirlo libremente, siempre que conserves los créditos originales.
