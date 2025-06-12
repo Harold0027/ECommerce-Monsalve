@@ -1,12 +1,11 @@
-import React from 'react'
 import ItemCard from './ItemCard'
 
-const Home = ({data}) => {
+const Item = ({data, type}) => {
   return (
    <div style={{display: "flex", justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap'}}>
-      {data.map(dato=> <ItemCard key={dato.id} dato={dato} nombreRuta={"/HomeDetail"}/> )}
+      {data.map(dato=> <ItemCard key={dato.id} dato={dato} nombreRuta={`${type}`}  /> )}
     </div> 
   )
 }
 
-export default Home
+export default Item

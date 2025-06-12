@@ -1,33 +1,28 @@
 import './App.css'
 import Navbar from './components/Navbar'
 import { Route,Routes,BrowserRouter } from 'react-router-dom'
-import HomeContainer from './components/HomeContainer'
-import HomeDetailContainer from './components/HomeDetailContainer'
-import NewsContainer from './components/NewContainer'
-import NewDetailContainer from './components/NewDetailContainer'
-import OfertsContainer from './components/OfertsContainer'
-import OfertsDetailContainer from './components/OfertsDetailContainer'
-import PopularsContainer from './components/PopularsContainer'
-import PopularDetailContainer from './components/PopularDetailContainer'
+import ItemContainer from './components/ItemContainer'
+import ItemDetailContainer from './components/ItemDetailContainer'
+import {CartProvider} from './context/CartContex'
+import Cart from './components/Cart'
+import Checkout from './components/Checkout'
 
 
 function App() {
   return (
-    <>
+    <CartProvider>
       <BrowserRouter>
           <Navbar/>
           <Routes>
-            <Route path='/' element={<HomeContainer/>} />
-            <Route path='/homeDetail/:id' element={<HomeDetailContainer/>}/>
-            <Route path='/petShop/nuevos' element={<NewsContainer/>}/>
-            <Route path='/nuevosDetail/:id' element={<NewDetailContainer/>}/>
-            <Route path='/petShop/ofertas' element={<OfertsContainer/>} />
-            <Route path='/ofertasDetail/:id' element={<OfertsDetailContainer/>} />
-            <Route path='/petShop/populares' element={<PopularsContainer/>} />
-            <Route path='/popularesDetail/:id' element={<PopularDetailContainer/>} />
+            <Route path='/' element={<ItemContainer/>} />
+            <Route path='/detail/:id' element={<ItemDetailContainer/>}/>
+            <Route path='/:category' element={<ItemContainer/>} />
+            <Route path='/:category/:id' element={<ItemDetailContainer/>} />
+            <Route path='/carrito' element={<Cart/>} />
+            <Route path='/checkout' element={<Checkout/>}/>
           </Routes>
       </BrowserRouter>
-    </>
+    </CartProvider>
   )
 }
 

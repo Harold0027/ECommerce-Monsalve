@@ -1,7 +1,6 @@
-import React from 'react'
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from 'react'
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock,getQuantity}) => {
     const [count,setCount]= useState(0);
 
     const aumentar=()=>{
@@ -15,7 +14,10 @@ const ItemCount = ({stock}) => {
         }
     }
 
-    
+    useEffect(() => {
+    getQuantity(count)
+    }, [count, getQuantity])
+
   return (
     <div>
       <div>
