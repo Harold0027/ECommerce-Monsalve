@@ -2,17 +2,23 @@ import { useContext } from 'react'
 import { CartContext } from '../context/CartContex'
 import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 const Cart = () => {
     const {cart, deleteItem, clear, cartTotal} = useContext(CartContext)
     const navigate = useNavigate()
 
     const handleCheckout = () => {
     if (cart.length === 0) {
-      alert("El carrito está vacío. Agrega productos antes de continuar.")
+      Swal.fire({
+        title: 'Carrito vacío 🤡',
+        text: 'No puedes finalizar la compra si el carrito está vacío.',
+        icon: 'warning',
+        confirmButtonText: 'Entendido'
+      })
     } else {
       navigate("/checkout")
     }
-  }
+    }
 
 
   return (

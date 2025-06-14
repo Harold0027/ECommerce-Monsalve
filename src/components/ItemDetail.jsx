@@ -1,7 +1,5 @@
 import { Link } from 'react-router-dom'
 import ItemCount from './ItemCount'
-import { useParams } from 'react-router-dom'
-import { useState,useEffect } from 'react'
 
 const ItemDetail = ({product,handleAddToCart,setQuantity}) => {
   return (

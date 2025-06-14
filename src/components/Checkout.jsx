@@ -4,6 +4,7 @@ import { addDoc, collection} from 'firebase/firestore'
 import { serverTimestamp } from 'firebase/firestore'
 import { Link } from 'react-router-dom'
 import {db} from '../service/firebase'
+import Swal from 'sweetalert2'
 
 const Checkout = () => {
   const [buyer,setBuyer] = useState({})
@@ -26,9 +27,18 @@ const Checkout = () => {
       e.preventDefault()
 
       if (!buyer.name || !buyer.address || !buyer.email){
-        alert("Llenar todos los campos")
+         Swal.fire({
+          title: 'Todos los campos son obligatorios 😕',
+          text: 'No puedes finalizar la compra si tus datos no estan completos.',
+          icon: 'warning',
+          confirmButtonText: 'Entendido'
+        })
       } else if (buyer.email !== validateEmail){
-        alert("Los correos no coinciden")
+         Swal.fire({
+          title: 'Los correos no coinciden ☹',
+          icon: 'warning',
+          confirmButtonText: 'Entendido'
+        })
       } else{
         let orden = {
         comprador: buyer,

@@ -13,11 +13,6 @@ PetShop es una aplicación web desarrollada con React que permite a los usuarios
 
 # Instalacion
 
-Es un proyecto en reac que usa firebase como base de datos
-
-
-# bash
-
 git clone https://github.com/Harold0027/ECommerce-Monsalve.git
 cd ECommerce-Monsalve
 npm install 
@@ -30,10 +25,15 @@ npm run dev
 React.js: Librería principal para la interfaz de usuario.
 Firebase: Backend como servicio (Base de datos, autenticación, hosting).
 Vite: Herramienta de desarrollo rápido para proyectos en React.
-CSS/SCSS: Estilizado del sitio web.
 React Router: Navegación entre páginas.
 
 
+# Librerias utilizadas
+- Firebase [https://firebase.google.com/docs], usada como base de datos para el proyecto.
+- React Router Dom [https://reactrouter.com/en/main], permite la navegación entre diferentes paginas en el proyecto.
+- Bootstrap [https://getbootstrap.com/docs/5.3/getting-started/introduction/], facilita el uso de estilos.
+- SweetAlert2 [https://sweetalert2.github.io/], usado para mostrar alertas mas estilizadas
+ 
 # Instrucciones para contribuir 
 
 1. Haz un fork del proyecto
