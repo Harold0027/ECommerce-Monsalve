@@ -6,13 +6,15 @@ import { CartContext } from '../context/CartContex';
 import { collection, doc, getDoc } from 'firebase/firestore';
 import { db } from '../service/firebase';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 const ItemDetailContainer = () => {
   const {addItem} =useContext(CartContext)
   const [quantity,setQuantity] = useState(1)
   const {id} = useParams()
   const [invalid, setInvalid] = useState(false)
   const [product,setProduct] = useState({})
-
+  const navigate = useNavigate()
   //Firebase
   useEffect(()=>{
     //conectar con nuestra coleccion
@@ -45,7 +47,17 @@ const ItemDetailContainer = () => {
       img: product.img,
       description: product.description
     }
-    addItem(newProduct,quantity)
+    if(quantity===0){
+      Swal.fire({
+        title: 'No añadiste ningun producto 🤡',
+        text: 'Debes seleccionar la cantidad del producto a añadir.',
+        icon: 'warning',
+        confirmButtonText: 'Entendido'
+      })
+    } else{
+      addItem(newProduct,quantity),
+      navigate("/carrito");
+    }
   }
 
   if(invalid){

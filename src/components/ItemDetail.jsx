@@ -38,7 +38,7 @@ const ItemDetail = ({product,handleAddToCart,setQuantity}) => {
           <h4 className="mt-4 mb-3 text-center">S/ {product.price}</h4>
           <div className="text-center">
             <button className="btn btn-primary" onClick={handleAddToCart}>
-              <Link to={"/carrito"} className="clase-a">Agregar al carrito</Link>
+                Agregar al carrito
             </button>
             <ItemCount stock={10} getQuantity={qty=>setQuantity(qty)}/>
           </div>
